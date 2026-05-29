@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sol Rosa Ajustes</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    body{
+  margin:0;
+  font-family:Arial;
+  color:#333;
+  overflow-x:hidden;
+
+  background:
+    radial-gradient(circle at top left, #f1c0c8 0%, transparent 30%),
+    radial-gradient(circle at top right, #d68b97 0%, transparent 35%),
+    linear-gradient(
+      160deg,
+      #bf6f78 0%,
+      #cc959c 25%,
+      #d9aeb5 50%,
+      #e8c7cc 75%,
+      #f4e3e6 100%
+    );
+
+  background-attachment:fixed;
+  background-size:cover;
+  min-height:100vh;
+}
+
+    header{
+  background:transparent;
+
+  text-align:center;
+  padding:0;
+  overflow:hidden;
+
+  box-shadow:none;
+}
+
+    header h1{
+      font-size:50px;
+    }
+
+    header p{
+      font-size:20px;
+      max-width:420px;
+      margin:auto;
+    }
+
+    section{
+      padding:60px 20px;
+      opacity:0;
+      transform:translateY(25px);
+      animation:fadeIn 0.9s forwards;
+    }
+
+    section:nth-of-type(1){ animation-delay:0.1s; }
+    section:nth-of-type(2){ animation-delay:0.3s; }
+    section:nth-of-type(3){ animation-delay:0.5s; }
+    section:nth-of-type(4){ animation-delay:0.7s; }
+
+    @keyframes fadeIn{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    h2{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:40px;
+      color:#7a4e55;
+      letter-spacing:1px;
+    }
+
+    .cards{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.55);
+      backdrop-filter:blur(10px);
+      width:300px;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
+      transition:0.4s;
+      border:1px solid rgba(255,255,255,0.4);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .card img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .card:hover img{
+      transform:scale(1.05);
+    }
+
+    .card h3{
+      text-align:center;
+      font-size:20px;
+      color:#7a4e55;
+      letter-spacing:0.5px;
+    }
+
+    .card p{
+      font-size:14px;
+      font-weight:600;
+      color:#666;
+      line-height:1.4;
+      padding-left:15px;
+      padding-right:15px;
+    }
+
+    footer{
+      background:#EAD8DC;
+      text-align:center;
+      padding:30px;
+    }
+
+    .redes-flutuantes{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+      z-index:999;
+    }
+
+    .redes-flutuantes a{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:28px;
+      text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+      transition:0.35s ease;
+    }
+
+    .redes-flutuantes a:hover{
+      transform:scale(1.12) translateY(-3px);
+    }
+
+    .whatsapp{
+      background:#25D366;
+      animation:pulsar 1.8s infinite;
+    }
+
+    .instagram{
+      background:#E1306C;
+    }
+
+    .localizacao{
+      background:#4285F4;
+    }
+
+    @keyframes pulsar{
+      0%{transform:scale(1); box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+      70%{transform:scale(1.08); box-shadow:0 0 0 15px rgba(37,211,102,0);}
+      100%{transform:scale(1); box-shadow:0 0 0 0 rgba(37,211,102,0);}
+    }
+
+    .logo-solrosa{
+      width:100%;
+      max-width:1250px;
+      height:260px;
+      object-fit:contain;
+      display:block;
+      margin:auto;
+    }
+
+    .sobre-mini{
+  padding:60px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.sobre-mini-box{
+  max-width:700px;
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(12px);
+  border-radius:25px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  border:1px solid rgba(255,255,255,0.4);
+}
+
+.sobre-mini-box h2{
+  margin-bottom:15px;
+  color:#7a4e55;
+  font-size:32px;
+}
+
+.sobre-mini-box p{
+  font-size:16px;
+  line-height:1.6;
+  color:#444;
+  margin-bottom:20px;
+}
+
+.sobre-mini-btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:30px;
+  background:#7a4e55;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.sobre-mini-btn:hover{
+  background:#5e3941;
+  transform:translateY(-2px);
+}
+
+.sobre-card-box p{
+  font-weight:700;
+  font-size:14px;
+  font-weight:600;
+  color:#666;
+  line-height:1.4;
+  padding:0 15px 20px;
+  text-align:center;
+}
+
+.sidebar{
+  position:fixed;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(12px);
+  padding:15px 10px;
+  border-radius:0 15px 15px 0;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  z-index:9999;
+}
+
+.sidebar a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#7a4e55;
+  font-weight:600;
+  font-size:14px;
+  padding:8px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.sidebar a i{
+  font-size:18px;
+}
+
+.sidebar a:hover{
+  background:#7a4e55;
+  color:white;
+  transform:translateX(5px);
+}
+
+@media (max-width: 768px){
+  .sidebar{
+    display:flex;
+
+    top:auto;
+    bottom:0;
+    left:0;
+    right:0;
+    transform:none;
+
+    flex-direction:row;
+    justify-content:space-around;
+
+    width:100%;
+    border-radius:15px 15px 0 0;
+    padding:10px 0;
+  }
+
+  .sidebar a{
+    flex-direction:column;
+    font-size:12px;
+    gap:5px;
+  }
+
+  .sidebar a i{
+    font-size:20px;
+  }
+}
+
+.header-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:25px;
+  padding:10px 20px;
+}
+
+/* máquina de costura (lado esquerdo) */
+.maquina{
+  width:190px;
+  max-width: 25vw;
+  height:auto;
+  object-fit:contain;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+   margin-left: 40px;
+}
+
+/* seu logo continua igual */
+.logo-solrosa{
+  width:100%;
+  max-width:520px;
+
+  height:auto;
+  object-fit:contain;
+
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18));
+
+  transform:none;
+}
+
+/* celular */
+@media (max-width: 768px){
+  .sidebar{
+    top:auto;
+    bottom:0;
+    left:0;
+    right:0;
+    transform:none;
+
+    flex-direction:row;
+    justify-content:space-around;
+
+    width:100%;
+    border-radius:15px 15px 0 0;
+  }
+
+  .sidebar a{
+    flex-direction:column;
+    font-size:12px;
+    gap:5px;
+  }
+
+  .sidebar a i{
+    font-size:20px;
+  }
+}
+
+.header-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:0;
+
+  padding:10px 20px;
+
+  min-height:240px;
+
+  position:relative;
+}
+@media (max-width: 768px){
+
+  .maquina{
+    width:80px;
+    margin:0;
+  }
+
+}
+
+@keyframes fadeInHeader{
+  from{
+    opacity:0;
+    transform: translateY(-20px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+.maquina{
+  width:180px;
+  max-width: 30vw;
+  height:auto;
+  object-fit:contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.18));
+
+  animation: floatMachine 3.5s ease-in-out infinite;
+}
+
+@keyframes floatMachine{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-8px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floatLogo{
+
+  0%{
+    transform: translateX(-160px) translateY(0px);
+  }
+
+  50%{
+    transform: translateX(-160px) translateY(-8px);
+  }
+
+  100%{
+    transform: translateX(-160px) translateY(0px);
+  }
+
+}
+
+@media (max-width: 768px){
+
+  .header-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:10px 20px;
+    min-height:auto;
+  }
+
+  .maquina{
+    width:110px;
+    max-width:40vw;
+    height:auto;
+    margin:0;
+    animation: floatMachine 3.5s ease-in-out infinite;
+  }
+
+  .logo-solrosa{
+    width:90%;
+    max-width:420px;
+    height:auto;
+    object-fit:contain;
+    margin:0 auto;
+    transform:none;
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,0.18));
+  }
+
+  header{
+    padding: 10px 0;
+  }
+}
+
+.logo-solrosa,
+.maquina{
+  object-fit: contain;
+}
+
+.redes-flutuantes{
+  position: fixed;
+  right: 20px;
+  bottom: 80px; /* sobe um pouco pra não encostar na barra */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10000;
+}
+
+@media (min-width: 769px){
+
+  .logo-solrosa{
+    max-width:420px;
+    animation: floatLogo 4s ease-in-out infinite;
+    position: relative;
+    left: 48px;
+  }
+
+  .header-container{
+    gap:10px;
+    align-items:flex-start;
+    min-height:180px;
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+
+  .maquina{
+    width:150px;
+  }
+
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+  
+  <a href="ajustes.html">
+    <i class="fa-solid fa-scissors"></i>
+    <span>Ajustes</span>
+  </a>
+
+  <a href="#reformas">
+    <i class="fa-solid fa-pen-nib"></i>
+    <span>Reformas</span>
+  </a>
+
+  <a href="#croche">
+    <i class="fa-solid fa-wand-magic-sparkles"></i>
+    <span>Crochê</span>
+  </a>
+
+  <a href="#vitrine">
+    <i class="fa-solid fa-store"></i>
+    <span>Vitrine</span>
+  </a>
+  
+  <a href="dicas.html">
+  <i class="fa-solid fa-lightbulb"></i>
+  <span>Dicas</span>
+</a>
+
+
+</div>
+
+  <header>
+  <div class="header-container">
+
+    <img src="maquina-costura.png" class="maquina">
+
+    <img src="logo.png" class="logo-solrosa">
+
+  </div>
+</header>
+
+  <section class="sobre-mini">
+
+  <div class="sobre-mini-box">
+
+    <h2>Sobre Nós</h2>
+
+    <p>
+  <strong>A Sol Rosa Ajustes nasceu do amor pela costura e pelo trabalho artesanal. Realizamos ajustes, reformas e concertos com cuidado e dedicação para que cada peça tenha o caimento perfeito em você!
+
+Além da costura, trabalhamos com crochê artesanal, criando peças feita a mão com carinho e delicadeza.
+
+Cada serviço é realizado com atenção especial para oferecer qualidade e um atendimento acolhedor para nossos clientes.</strong>
+    </p>
+
+    <a href="https://wa.me/5519988100652?text=Olá!%20quero%20saber%20mais." 
+       class="sobre-mini-btn">
+      Fale conosco
+    </a>
+
+  </div>
+
+</section>
+
+  <section>
+    <h2>Serviços</h2>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1779938733260-ebd0cd06e063?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        <h3>Ajustes</h3>
+        <p>Barra, mangas, cintura e ajustes em geral.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1632649027900-389e810204e6?w=500&auto=format&fit=crop&q=60">
+        <h3>Crochê Artesanal</h3>
+        <p>Peças exclusivas feitas para você.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+        <h3>Reformas</h3>
+        <p>Transformamos roupas antigas em novas peças.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Vitrine Virtual</h2>
+
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
+        <h3>Em breve</h3>
+        <p></p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+        <h3>Em Breve</h3>
+        <p></p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93">
+        <h3>Em breve</h3>
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Sol Rosa
+  </footer>
+
+  <div class="redes-flutuantes">
+
+    <a href="https://wa.me/5519988100652" class="whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://instagram.com/solrosa.ajustes" class="instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Rua+Pedro+Zaccaria,+689,+Jardim+Santa+Luiza,+Limeira,+SP" class="localizacao" target="_blank">
+  <i class="fas fa-location-dot"></i>
+</a>
+  </div>
+
+</body>
+</html>
